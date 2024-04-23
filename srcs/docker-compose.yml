@@ -22,7 +22,7 @@ services:
     container_name: DB
     env_file:
       - .env
-    # tty: true
+    tty: true
     volumes:
       - dbdata:/var/lib/mysql
     restart: always
@@ -33,7 +33,7 @@ services:
     container_name: NGINX
     env_file:
       - .env
-    # tty: true
+    tty: true
     depends_on:
       - wordpress
     volumes:
@@ -47,7 +47,7 @@ services:
       - 9000:9000
     container_name: Wordpress_PHP
     env_file: .env
-    # tty: true
+    tty: true
     depends_on:
       - mariadb
     volumes:
