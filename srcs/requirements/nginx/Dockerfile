@@ -6,7 +6,7 @@
 #    By: lhojoon <lhojoon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/08 16:51:18 by lhojoon           #+#    #+#              #
-#    Updated: 2024/04/23 18:42:33 by lhojoon          ###   ########.fr        #
+#    Updated: 2024/04/23 18:46:33 by lhojoon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,8 +26,9 @@ RUN mkdir -p /etc/nginx/ssl
 RUN openssl req -x509 -days 365 -new -newkey rsa:2048 -nodes -keyout /etc/nginx/ssl/cert-key.pem -out /etc/nginx/ssl/cert.pem -subj "/C=FR/ST=Denial/L=Dis/CN=lhojoon.42.fr"
 
 # TODO : Test this if works or have to replace localhost
-# RUN nginx
 
-RUN service nginx restart
+# RUN service nginx restart
 
 EXPOSE 443
+
+CMD ["nginx"]
