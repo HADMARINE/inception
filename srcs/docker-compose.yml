@@ -5,7 +5,7 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: /Users/lhojoon/Desktop/db
+      device: /Users/lhojoon/Desktop/dbdata
       # device: /goinfre/lhojoon/volumes/dbdata
       o: bind
   wordpress:
