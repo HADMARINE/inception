@@ -6,14 +6,12 @@ volumes:
     driver_opts:
       type: none
       device: /home/lhojoon/Documents/dbdata
-      # device: /goinfre/lhojoon/volumes/dbdata
       o: bind
   wordpress:
     driver: local
     driver_opts:
       type: none
       device: /home/lhojoon/Documents/wordpress
-      # device: /goinfre/lhojoon/docker/volumes/wordpress
       o: bind
 
 services:
@@ -24,7 +22,7 @@ services:
     container_name: DB
     env_file:
       - .env
-    tty: true
+    # tty: true
     volumes:
       - dbdata:/var/lib/mysql
     restart: always
@@ -35,7 +33,7 @@ services:
     container_name: NGINX
     env_file:
       - .env
-    tty: true
+    # tty: true
     depends_on:
       - wordpress
     volumes:
@@ -49,7 +47,7 @@ services:
       - 9000:9000
     container_name: Wordpress_PHP
     env_file: .env
-    tty: true
+    # tty: true
     depends_on:
       - mariadb
     volumes:
