@@ -5,15 +5,15 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      # device: /Users/lhojoon/Desktop/db
-      device: /goinfre/lhojoon/volumes/dbdata
+      device: /Users/lhojoon/Desktop/db
+      # device: /goinfre/lhojoon/volumes/dbdata
       o: bind
   wordpress:
     driver: local
     driver_opts:
       type: none
-      # device: /Users/lhojoon/Desktop/wordpress
-      device: /goinfre/lhojoon/docker/volumes/wordpress
+      device: /Users/lhojoon/Desktop/wordpress
+      # device: /goinfre/lhojoon/docker/volumes/wordpress
       o: bind
 
 services:
