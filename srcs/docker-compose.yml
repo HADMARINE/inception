@@ -1,0 +1,55 @@
+# version: '3.8'
+
+volumes:
+  dbdata:
+    driver: local
+    driver_opts:
+      type: none
+      # device: /Users/lhojoon/Desktop/db
+      device: /goinfre/lhojoon/volumes/dbdata
+      o: bind
+  wordpress:
+    driver: local
+    driver_opts:
+      type: none
+      # device: /Users/lhojoon/Desktop/wordpress
+      device: /goinfre/lhojoon/docker/volumes/wordpress
+      o: bind
+
+services:
+  mariadb:
+    build: requirements/mariadb
+    ports:
+      - 3306:3306
+    container_name: DB
+    env_file:
+      - .env
+    tty: true
+    volumes:
+      - dbdata:/var/lib/mysql
+    restart: always
+  nginx:
+    build: requirements/nginx
+    ports:
+      - 61001:443
+    container_name: NGINX
+    env_file:
+      - .env
+    tty: true
+    depends_on:
+      - wordpress
+    volumes:
+      - wordpress:/var/www/html
+    restart: always
+  wordpress:
+    build: requirements/wordpress
+    ports:
+      - 9000:9000
+    container_name: Wordpress_PHP
+    env_file: .env
+    tty: true
+    depends_on:
+      - mariadb
+    volumes:
+      - wordpress:/var/www/html
+    restart: always
