@@ -41,6 +41,8 @@ services:
     volumes:
       - wordpress:/var/www/html
     restart: always
+    extra_hosts:
+      - "lhojoon.42.fr:127.0.0.1"
   wordpress:
     build: requirements/wordpress
     ports:
