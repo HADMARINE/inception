@@ -31,7 +31,7 @@ services:
   nginx:
     build: requirements/nginx
     ports:
-      - 61001:443
+      - 443:443
     container_name: NGINX
     env_file:
       - .env
