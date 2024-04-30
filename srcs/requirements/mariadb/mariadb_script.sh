@@ -1,3 +1,5 @@
+service mariadb start
+
 echo "CREATE USER '$MYSQL_USER'@%' IDENTIFIED BY '$MYSQL_PASSWORD';" | mysql
 
 echo "GRANT ALL PRIVILEGES ON *.* TO '$MYSQL_USER'@'%' IDENTIFIED BY '$MYSQL_PASSWORD';" | mysql
