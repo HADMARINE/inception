@@ -1,4 +1,5 @@
 # version: '3.8'
+name: inception
 
 volumes:
   dbdata:
@@ -13,7 +14,10 @@ volumes:
       type: none
       device: /home/lhojoon/Documents/wordpress
       o: bind
-
+networks:
+  default:
+    name: docker-network
+    # external: true
 services:
   mariadb:
     build: requirements/mariadb
@@ -25,6 +29,8 @@ services:
     tty: true
     volumes:
       - dbdata:/var/lib/mysql
+    networks:
+      - default
     restart: always
   nginx:
     build: requirements/nginx
@@ -38,6 +44,8 @@ services:
       - wordpress
     volumes:
       - wordpress:/var/www/html
+    networks:
+      - default
     restart: always
     extra_hosts:
       - "lhojoon.42.fr:127.0.0.1"
@@ -52,4 +60,6 @@ services:
       - mariadb
     volumes:
       - wordpress:/var/www/html
+    networks:
+      - default
     restart: always
