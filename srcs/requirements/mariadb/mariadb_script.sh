@@ -1,6 +1,6 @@
 service mariadb start
 
-echo $MYSQL_USER
+echo $MYSQL_USER; exit 1
 
 echo "CREATE USER '$MYSQL_USER'@'%' IDENTIFIED BY '$MYSQL_PASSWORD';" | mysql
 
