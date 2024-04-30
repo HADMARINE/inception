@@ -6,7 +6,7 @@
 #    By: lhojoon <lhojoon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/22 13:15:39 by lhojoon           #+#    #+#              #
-#    Updated: 2024/04/30 14:23:55 by lhojoon          ###   ########.fr        #
+#    Updated: 2024/04/30 14:27:31 by lhojoon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt -y install mariadb-server
 
 # RUN mysql_secure_installation
 
-COPY ./mariadb_scrpt.sh .
+COPY ./mariadb_script.sh .
 
 RUN ./mariadb_script.sh
 
