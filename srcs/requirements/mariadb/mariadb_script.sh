@@ -19,5 +19,3 @@ echo "CREATE DATABASE WORDPRESS;" | mysql
 
 kill $(cat /var/run/mysqld/mysqld.pid)
 # service mysql stop
-
-mysqld
