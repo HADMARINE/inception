@@ -23,7 +23,7 @@ services:
     build: requirements/mariadb
     ports:
       - 3306:3306
-    container_name: DB
+    container_name: db_container
     env_file:
       - .env
     tty: true
@@ -36,7 +36,7 @@ services:
     build: requirements/nginx
     ports:
       - 443:443
-    container_name: NGINX
+    container_name: NGINX_container
     env_file:
       - .env
     tty: true
@@ -53,7 +53,7 @@ services:
     build: requirements/wordpress
     ports:
       - 9000:9000
-    container_name: Wordpress_PHP
+    container_name: Wordpress_PHP_container
     env_file: .env
     tty: true
     depends_on:
