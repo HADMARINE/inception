@@ -1,4 +1,8 @@
+export DEBIAN_FRONTEND=noninteractive
+
 service mariadb start
+
+mariadb -uroot -pPASS -e "SET PASSWORD = PASSWORD('$MYSQL_ROOT_PASSWORD');"
 
 echo "CREATE USER '$MYSQL_USER'@'%' IDENTIFIED BY '$MYSQL_PASSWORD';" | mariadb
 
