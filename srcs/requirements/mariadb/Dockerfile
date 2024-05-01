@@ -6,7 +6,7 @@
 #    By: lhojoon <lhojoon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/22 13:15:39 by lhojoon           #+#    #+#              #
-#    Updated: 2024/05/01 14:59:06 by lhojoon          ###   ########.fr        #
+#    Updated: 2024/05/01 15:01:01 by lhojoon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,6 @@ RUN apt -y update
 
 COPY ./mariadb_script.sh .
 
-RUN ./mariadb_script.sh
+RUN bash ./mariadb_script.sh
 
 EXPOSE 3306
