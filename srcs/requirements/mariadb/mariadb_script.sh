@@ -8,7 +8,7 @@ apt -y install mariadb-server
 
 # mysql_secure_installation
 
-service mysql start
+service mariadb start
 
 echo "CREATE USER '$MYSQL_USER'@'%' IDENTIFIED BY '$MYSQL_PASSWORD';" | mariadb
 
@@ -19,6 +19,6 @@ echo "FLUSH PRIVILEGES;" | mariadb
 echo "CREATE DATABASE WORDPRESS;" | mariadb
 
 # kill $(cat /var/run/mysqld/mysqld.pid)
-systemctl stop mariadb
+service mariadb start
 
 mariadbd
