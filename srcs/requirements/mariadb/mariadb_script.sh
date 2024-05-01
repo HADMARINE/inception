@@ -19,6 +19,6 @@ echo "FLUSH PRIVILEGES;" | mariadb
 echo "CREATE DATABASE WORDPRESS;" | mariadb
 
 # kill $(cat /var/run/mysqld/mysqld.pid)
-service mariadb stop
+service mariadbd stop
 
 mariadbd
