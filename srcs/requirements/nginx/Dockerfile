@@ -6,11 +6,11 @@
 #    By: lhojoon <lhojoon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/08 16:51:18 by lhojoon           #+#    #+#              #
-#    Updated: 2024/04/23 18:47:08 by lhojoon          ###   ########.fr        #
+#    Updated: 2024/05/01 15:42:54 by lhojoon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-FROM ubuntu:24.04
+FROM debian:bookworm
 
 LABEL maintainer="lhojoon@student.42.fr"
 

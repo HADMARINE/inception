@@ -6,11 +6,11 @@
 #    By: lhojoon <lhojoon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/22 13:15:39 by lhojoon           #+#    #+#              #
-#    Updated: 2024/05/01 15:37:12 by lhojoon          ###   ########.fr        #
+#    Updated: 2024/05/01 15:42:48 by lhojoon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-FROM ubuntu:24.04
+FROM debian:bookworm
 
 ENV MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
 ENV MYSQL_USER=${MYSQL_USER}
@@ -20,7 +20,7 @@ LABEL maintainer="lhojoon@student.42.fr"
 
 RUN apt-get -y update
 
-RUN apt -y install mariadb-server
+RUN apt-get -y install mariadb-server
 
 # RUN mysql_secure_installation
 
