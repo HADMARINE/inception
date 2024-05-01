@@ -1,9 +1,12 @@
 export DEBIAN_FRONTEND=noninteractive
 
-service mariadb start
-
 # mysql -uroot -pPASS -e "SET PASSWORD = PASSWORD('$MYSQL_ROOT_PASSWORD');"
-mysql -uroot -pPASS -e "SET PASSWORD = PASSWORD('TEST');"
+sudo debconf-set-selections <<< "mariadb-server mysql-server/root_password password $MYSQL_ROOT_PASSWORD"
+sudo debconf-set-selections <<< "mariadb-server mysql-server/root_password_again password $MYSQL_ROOT_PASSWORD" 
+
+apt -y install mariadb-server
+
+service mariadb start
 
 echo "CREATE USER '$MYSQL_USER'@'%' IDENTIFIED BY '$MYSQL_PASSWORD';" | mariadb
 
