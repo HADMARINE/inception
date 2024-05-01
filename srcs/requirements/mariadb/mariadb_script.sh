@@ -8,7 +8,7 @@ apt -y install mariadb-server
 
 # mysql_secure_installation
 
-systemctl start mariadb
+service mysql start
 
 echo "CREATE USER '$MYSQL_USER'@'%' IDENTIFIED BY '$MYSQL_PASSWORD';" | mariadb
 
