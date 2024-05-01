@@ -6,9 +6,9 @@ debconf-set-selections <<< "mariadb-server mysql-server/root_password_again pass
 
 apt -y install mariadb-server
 
-mysql_secure_installation
+# mysql_secure_installation
 
-service mariadb start
+service mariadbd start
 
 echo "CREATE USER '$MYSQL_USER'@'%' IDENTIFIED BY '$MYSQL_PASSWORD';" | mariadb
 
