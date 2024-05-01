@@ -6,7 +6,7 @@
 #    By: lhojoon <lhojoon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/22 13:15:39 by lhojoon           #+#    #+#              #
-#    Updated: 2024/05/01 15:01:01 by lhojoon          ###   ########.fr        #
+#    Updated: 2024/05/01 15:16:26 by lhojoon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ ENV MYSQL_PASSWORD=${MYSQL_PASSWORD}
 
 LABEL maintainer="lhojoon@student.42.fr"
 
-RUN apt -y update
+RUN apt-get -y update
+RUN apt-get -y install systemd
 
 # RUN mysql_secure_installation
 
