@@ -7,7 +7,7 @@
 
 # mysql_secure_installation
 
-service mysql start
+systemctl start mariadb
 
 echo "CREATE USER '$MYSQL_USER'@'%' IDENTIFIED BY '$MYSQL_PASSWORD';" | mysql
 
