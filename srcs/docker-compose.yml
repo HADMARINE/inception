@@ -27,7 +27,8 @@ services:
       - .env
     tty: true
     volumes:
-      - dbdata:/var/lib/mysql
+      - dbdata/lib:/var/lib/mysql
+      - dbdata/log:/var/log/mysql
     networks:
       - default
     restart: always
