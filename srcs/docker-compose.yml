@@ -17,11 +17,10 @@ volumes:
 networks:
   default:
     name: docker-network
+    driver: bridge
 services:
   mariadb:
     build: requirements/mariadb
-    ports:
-      - 3306:3306
     container_name: db_container
     env_file:
       - .env
