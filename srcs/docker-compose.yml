@@ -17,7 +17,6 @@ volumes:
 networks:
   default:
     name: docker-network
-    # external: true
 services:
   mariadb:
     build: requirements/mariadb
