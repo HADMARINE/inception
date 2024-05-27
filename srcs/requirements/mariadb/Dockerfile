@@ -6,7 +6,7 @@
 #    By: lhojoon <lhojoon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/22 13:15:39 by lhojoon           #+#    #+#              #
-#    Updated: 2024/05/01 15:42:48 by lhojoon          ###   ########.fr        #
+#    Updated: 2024/05/27 17:17:22 by lhojoon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,8 @@ RUN apt-get -y update
 RUN apt-get -y install mariadb-server
 
 # RUN mysql_secure_installation
+
+RUN chown 999:999 /var/log/mysql
 
 COPY ./mariadb_script.sh .
 COPY ./50-server.cnf /etc/mysql/mariadb.conf.d/
