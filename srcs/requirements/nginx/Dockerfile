@@ -6,7 +6,7 @@
 #    By: lhojoon <lhojoon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/08 16:51:18 by lhojoon           #+#    #+#              #
-#    Updated: 2024/05/28 15:53:20 by lhojoon          ###   ########.fr        #
+#    Updated: 2024/05/28 15:58:37 by lhojoon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,4 +31,4 @@ RUN service nginx stop
 
 EXPOSE 443
 
-CMD ["nginx"]
+CMD ["nginx", "-g", "daemon off;"]
