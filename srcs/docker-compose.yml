@@ -24,13 +24,15 @@ services:
     container_name: db_container
     env_file:
       - .env
-    tty: true
+    # tty: true
     volumes:
       # - dbdata:/var
       - dbdata:/var/lib/mysql
       # - dbdata:/var/log/mysql
     networks:
       - default
+    ports:
+      - 3306
     restart: always
   nginx:
     build: requirements/nginx
@@ -39,7 +41,7 @@ services:
     container_name: NGINX_container
     env_file:
       - .env
-    tty: true
+    # tty: true
     depends_on:
       - wordpress
     volumes:
@@ -52,10 +54,10 @@ services:
   wordpress:
     build: requirements/wordpress
     ports:
-      - 9000:9000
+      - 9000
     container_name: Wordpress_PHP_container
     env_file: .env
-    tty: true
+    # tty: true
     depends_on:
       - mariadb
     volumes:

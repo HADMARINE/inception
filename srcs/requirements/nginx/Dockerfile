@@ -6,7 +6,7 @@
 #    By: lhojoon <lhojoon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/08 16:51:18 by lhojoon           #+#    #+#              #
-#    Updated: 2024/05/01 15:42:54 by lhojoon          ###   ########.fr        #
+#    Updated: 2024/05/28 15:38:51 by lhojoon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,12 +23,12 @@ RUN apt -y install nginx openssl
 # COPY ./default.conf /etc/nginx/nginx.conf
 COPY ./default.conf /etc/nginx/conf.d/lhojoon.42.fr.conf
 RUN mkdir -p /etc/nginx/ssl
-RUN openssl req -x509 -days 365 -new -newkey rsa:2048 -nodes -keyout /etc/nginx/ssl/cert-key.pem -out /etc/nginx/ssl/cert.pem -subj "/C=FR/ST=Denial/L=Dis/CN=lhojoon.42.fr"
+RUN openssl req -x509 -days 365 -newkey rsa:2048 -nodes -keyout /etc/nginx/ssl/cert-key.pem -out /etc/nginx/ssl/cert.pem -subj "/C=FR/ST=IDF/L=Paris/CN=lhojoon.42.fr"
 
 # TODO : Test this if works or have to replace localhost
 
-RUN service nginx restart
+RUN service nginx stop
 
 EXPOSE 443
 
-# CMD ["nginx"]
+CMD ["nginx", "-g", "'daemon off;'"]
