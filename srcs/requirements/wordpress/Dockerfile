@@ -6,7 +6,7 @@
 #    By: lhojoon <lhojoon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/22 13:53:41 by lhojoon           #+#    #+#              #
-#    Updated: 2024/06/05 17:31:15 by lhojoon          ###   ########.fr        #
+#    Updated: 2024/06/05 17:37:00 by lhojoon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ FROM debian:bookworm
 LABEL maintainer="lhojoon@student.42.fr"
 
 RUN apt -y update
-RUN apt -y install php php-mysql php-fpm curl wget
+RUN apt -y install php php-mysql php7.3-fpm curl wget
 
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
     && chmod +x wp-cli.phar \
