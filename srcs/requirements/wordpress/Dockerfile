@@ -6,7 +6,7 @@
 #    By: lhojoon <lhojoon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/22 13:53:41 by lhojoon           #+#    #+#              #
-#    Updated: 2024/06/05 17:40:39 by lhojoon          ###   ########.fr        #
+#    Updated: 2024/06/05 17:41:26 by lhojoon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ FROM debian:bookworm
 
 LABEL maintainer="lhojoon@student.42.fr"
 
-RUN apt-get install software-properties-common
+RUN apt update -y
+RUN apt-get install -y software-properties-common
 RUN add-apt-repository -y ppa:ondrej/php
 RUN apt update
 RUN apt -y install php php-mysql php7.3-fpm curl wget
