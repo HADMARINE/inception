@@ -16,7 +16,7 @@ volumes:
       o: bind
 networks:
   default:
-    name: docker-network
+    name: inception
     driver: bridge
 services:
   mariadb:
