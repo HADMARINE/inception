@@ -6,7 +6,7 @@
 #    By: lhojoon <lhojoon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/22 13:53:41 by lhojoon           #+#    #+#              #
-#    Updated: 2024/06/06 14:43:58 by lhojoon          ###   ########.fr        #
+#    Updated: 2024/06/06 16:36:58 by lhojoon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,10 @@ LABEL maintainer="lhojoon@student.42.fr"
 
 RUN apt update -y
 RUN apt install -y software-properties-common python3-launchpadlib
+RUN sh -c 'echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list'
+RUN wget -qO - https://packages.sury.org/php/apt.gpg | sudo apt-key add -
 RUN apt update -y
-RUN apt-add-repository ppa:ondrej/php && apt install -y wget php8.3-cli php8.3-fpm php8.3-mysql php8.3-json php8.3-opcache php8.3-mbstring php8.3-xml php8.3-gd php8.3-curl
+RUN apt install -y wget php7.4-cli php7.4-fpm php7.4-mysql php7.4-json php7.4-opcache php7.4-mbstring php7.4-xml php7.4-gd php7.4-curl
 RUN mkdir -p /var/www/html/lhojoon.42.fr
 
 RUN wget -P /tmp https://wordpress.org/latest.tar.gz
