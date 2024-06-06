@@ -6,7 +6,7 @@
 #    By: lhojoon <lhojoon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/22 13:53:41 by lhojoon           #+#    #+#              #
-#    Updated: 2024/06/06 17:01:42 by lhojoon          ###   ########.fr        #
+#    Updated: 2024/06/06 17:16:25 by lhojoon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,10 +22,17 @@ RUN apt update -y
 RUN apt install -y wget php7.4-cli php7.4-fpm php7.4-mysql php7.4-json php7.4-opcache php7.4-mbstring php7.4-xml php7.4-gd php7.4-curl
 RUN mkdir -p /var/www/html/lhojoon.42.fr
 
-RUN wget -P /tmp https://wordpress.org/latest.tar.gz
-RUN tar -xf /tmp/latest.tar.gz -C /tmp
-RUN mv /tmp/wordpress/* /var/www/html/lhojoon.42.fr
-RUN chown -R www-data: /var/www/html/lhojoon.42.fr
+# RUN wget -P /tmp https://wordpress.org/latest.tar.gz
+# RUN tar -xf /tmp/latest.tar.gz -C /tmp
+# RUN mv /tmp/wordpress/* /var/www/html/lhojoon.42.fr
+# RUN chown -R www-data: /var/www/html/lhojoon.42.fr
+RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+RUN chmod +x wp-cli.phar
+RUN mv wp-cli.phar /usr/local/bin/wp
+
+RUN wp core download --allow-root
+RUN mv /var/www/html/wp-config-sample.php /var/www/html/lhojoon.42.fr/wp-config.php
+
 
 # RUN apt update -y
 # RUN apt-get install -y software-properties-common
@@ -44,11 +51,11 @@ RUN chown -R www-data: /var/www/html/lhojoon.42.fr
 # # RUN chown lhojoon: /var/www/html/lhojoon.42.fr
 # RUN curl https://wordpress.org/latest.tar.gz | tar zx -C /var/www/html/lhojoon.42.fr
 
-# COPY ./install.sh /usr/local/bin
-# RUN chmod +x /usr/local/bin/install.sh
-# ENTRYPOINT ["/usr/local/bin/install.sh"]
+COPY ./install.sh /usr/local/bin
+RUN chmod +x /usr/local/bin/install.sh
+RUN sh /usr/local/bin/install.sh
 
-WORKDIR /var/www/html/
+# WORKDIR /var/www/html/
 
 EXPOSE 9000
 
