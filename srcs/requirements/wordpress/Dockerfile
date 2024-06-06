@@ -6,7 +6,7 @@
 #    By: lhojoon <lhojoon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/22 13:53:41 by lhojoon           #+#    #+#              #
-#    Updated: 2024/06/06 16:38:10 by lhojoon          ###   ########.fr        #
+#    Updated: 2024/06/06 16:55:00 by lhojoon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,8 @@ RUN apt install -y wget php7.4-cli php7.4-fpm php7.4-mysql php7.4-json php7.4-op
 RUN mkdir -p /var/www/html/lhojoon.42.fr
 
 RUN wget -P /tmp https://wordpress.org/latest.tar.gz
-RUN tar -xf /tmp/latest.tar.gz -C /var/www/html/lhojoon.42.fr
+RUN tar -xf /tmp/latest.tar.gz -C /tmp
+RUN mv /tmp/wordpress/* /var/www/html/lhojoon.42.fr
 RUN chown -R www-data: /var/www/html/lhojoon.42.fr
 
 # RUN apt update -y
