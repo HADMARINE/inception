@@ -6,7 +6,7 @@
 #    By: lhojoon <lhojoon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/22 13:53:41 by lhojoon           #+#    #+#              #
-#    Updated: 2024/06/06 17:31:45 by lhojoon          ###   ########.fr        #
+#    Updated: 2024/06/06 17:34:01 by lhojoon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ RUN chmod +x wp-cli.phar
 RUN mv wp-cli.phar /usr/local/bin/wp
 
 RUN wp core download --allow-root
-RUN mv /var/www/html/wp-config-sample.php /var/www/html/lhojoon.42.fr/wp-config.php
+# RUN mv /var/www/html/wp-config-sample.php /var/www/html/lhojoon.42.fr/wp-config.php
 
 
 # RUN apt update -y
