@@ -6,7 +6,7 @@
 #    By: lhojoon <lhojoon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/22 13:53:41 by lhojoon           #+#    #+#              #
-#    Updated: 2024/06/06 17:23:11 by lhojoon          ###   ########.fr        #
+#    Updated: 2024/06/06 17:29:16 by lhojoon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ FROM debian:bookworm
 LABEL maintainer="lhojoon@student.42.fr"
 
 
-COPY wp-config.php /var/www/html
+COPY wp-config.php /var/www/html/wp-config.php
 RUN apt update -y
 RUN apt install -y software-properties-common python3-launchpadlib wget
 RUN sh -c 'echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list'
