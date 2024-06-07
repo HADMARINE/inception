@@ -6,7 +6,7 @@
 #    By: lhojoon <lhojoon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/22 13:53:41 by lhojoon           #+#    #+#              #
-#    Updated: 2024/06/07 17:07:14 by lhojoon          ###   ########.fr        #
+#    Updated: 2024/06/07 17:24:02 by lhojoon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ RUN wget -qO - https://packages.sury.org/php/apt.gpg | apt-key add -
 RUN apt update -y
 RUN apt install -y wget php7.4-cli php7.4-fpm php7.4-mysql php7.4-json php7.4-opcache php7.4-mbstring php7.4-xml php7.4-gd php7.4-curl
 RUN mkdir -p /var/www/html/lhojoon.42.fr
-COPY wp-config.php /var/www/html/lhojoon.42.fr/wp-config.php
+COPY wp-config.php /var/www/html/wp-config.php
+COPY www.conf /var/www/html
 
 # RUN wget -P /tmp https://wordpress.org/latest.tar.gz
 # RUN tar -xf /tmp/latest.tar.gz -C /tmp
