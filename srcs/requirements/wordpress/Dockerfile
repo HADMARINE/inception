@@ -24,7 +24,7 @@ RUN mkdir /run/php
 #Launch script
 
 COPY ./install.sh /usr/local/bin/
-ENTRYPOINT ["install.sh"]
+ENTRYPOINT ["/usr/local/bin/install.sh"]
 
 WORKDIR /var/www/html/
 
