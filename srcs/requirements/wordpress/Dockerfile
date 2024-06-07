@@ -6,7 +6,7 @@
 #    By: lhojoon <lhojoon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/22 13:53:41 by lhojoon           #+#    #+#              #
-#    Updated: 2024/06/07 17:01:06 by lhojoon          ###   ########.fr        #
+#    Updated: 2024/06/07 17:07:14 by lhojoon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,6 @@ FROM debian:bookworm
 LABEL maintainer="lhojoon@student.42.fr"
 
 
-COPY wp-config.php /var/www/html/wp-config.php
 RUN apt update -y
 RUN apt install -y software-properties-common python3-launchpadlib wget curl
 RUN sh -c 'echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list'
@@ -23,6 +22,7 @@ RUN wget -qO - https://packages.sury.org/php/apt.gpg | apt-key add -
 RUN apt update -y
 RUN apt install -y wget php7.4-cli php7.4-fpm php7.4-mysql php7.4-json php7.4-opcache php7.4-mbstring php7.4-xml php7.4-gd php7.4-curl
 RUN mkdir -p /var/www/html/lhojoon.42.fr
+COPY wp-config.php /var/www/html/lhojoon.42.fr/wp-config.php
 
 # RUN wget -P /tmp https://wordpress.org/latest.tar.gz
 # RUN tar -xf /tmp/latest.tar.gz -C /tmp
@@ -57,7 +57,7 @@ COPY ./install.sh /usr/local/bin
 RUN chmod +x /usr/local/bin/install.sh
 ENTRYPOINT ["/usr/local/bin/install.sh"]
 
-# WORKDIR /var/www/html/
+WORKDIR /var/www/html/
 
 EXPOSE 9000
 
