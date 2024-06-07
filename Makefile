@@ -6,7 +6,7 @@
 #    By: lhojoon <lhojoon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/08 16:42:33 by lhojoon           #+#    #+#              #
-#    Updated: 2024/06/07 16:28:09 by lhojoon          ###   ########.fr        #
+#    Updated: 2024/06/07 17:57:47 by lhojoon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,4 +20,13 @@ clean:
 	docker rmi -f $$(docker images -qa);\
 	docker volume rm $$(docker volume ls -q);\
 	docker network rm $$(docker network ls -q);
-re: clean all
+fclean:
+	@docker-compose -f $(COMPOSE_FILE) down
+	@-docker stop `docker ps -qa`
+	@-docker rm `docker ps -qa`
+	@-docker rmi -f `docker images -qa`
+	@-docker volume rm `docker volume ls -q`
+	@-docker network rm `docker network ls -q`
+	@sudo rm -rf /home/bfaisy/data/wordpress
+	@sudo rm -rf /home/bfaisy/data/mysql
+re: fclean all
