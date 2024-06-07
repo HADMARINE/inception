@@ -6,7 +6,7 @@
 #    By: lhojoon <lhojoon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/22 13:53:41 by lhojoon           #+#    #+#              #
-#    Updated: 2024/06/07 16:26:54 by lhojoon          ###   ########.fr        #
+#    Updated: 2024/06/07 17:01:06 by lhojoon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,7 +57,7 @@ COPY ./install.sh /usr/local/bin
 RUN chmod +x /usr/local/bin/install.sh
 ENTRYPOINT ["/usr/local/bin/install.sh"]
 
-WORKDIR /var/www/html/
+# WORKDIR /var/www/html/
 
 EXPOSE 9000
 
