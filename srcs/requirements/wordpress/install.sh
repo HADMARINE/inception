@@ -12,7 +12,6 @@
 	# sed -i "s/$MYSQL_HOSTNAME/g" wp-config-sample.php
 	# sed -i "s/$MYSQL_DATABASE/g" wp-config-sample.php
 
-rm -rf /etc/php/7.4/fpm/pool.d/www.conf
 # mv ./www.conf /etc/php/7.4/fpm/pool.d/
 
 sed -i -r "s/db1/$MYSQL_DATABASE/1"   lhojoon.42.fr/wp-config.php
