@@ -17,7 +17,7 @@ echo "GRANT ALL PRIVILEGES ON *.* TO '$MYSQL_USER'@'%' IDENTIFIED BY '$MYSQL_PAS
 echo "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '$MYSQL_ROOT_PASSWORD';" | mysql
 echo "FLUSH PRIVILEGES;" | mysql
 
-echo "CREATE DATABASE WORDPRESS;" | mysql
+echo "CREATE DATABASE $MYSQL_DATABASE;" | mysql
 
 kill $(cat /var/run/mysqld/mysqld.pid)
 # service mysql stop
