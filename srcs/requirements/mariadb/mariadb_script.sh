@@ -9,7 +9,7 @@
 
 # systemctl start mariadb
 
-service mysql start
+service mariadb start
 
 # echo "CREATE USER '$MYSQL_USER'@'%' IDENTIFIED BY '$MYSQL_PASSWORD';" | mysql
 
