@@ -18,7 +18,7 @@
 
 # echo "CREATE DATABASE IF NOT EXISTS $MYSQL_DATABASE;" | mysql
 
-service mariadb start
+service mysql start
 
 echo "CREATE DATABASE IF NOT EXISTS $MYSQL_DATABASE ;" > db1.sql
 echo "CREATE USER IF NOT EXISTS '$MYSQL_USER'@'%' IDENTIFIED BY '$MYSQL_PASSWORD' ;" >> db1.sql

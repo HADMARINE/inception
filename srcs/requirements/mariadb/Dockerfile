@@ -6,7 +6,7 @@
 #    By: lhojoon <lhojoon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/22 13:15:39 by lhojoon           #+#    #+#              #
-#    Updated: 2024/06/12 15:03:51 by lhojoon          ###   ########.fr        #
+#    Updated: 2024/06/12 15:07:14 by lhojoon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ COPY ./50-server.cnf /etc/mysql/mariadb.conf.d/
 RUN chmod +x /mariadb_script.sh
 # RUN bash ./mariadb_script.sh
 
-RUN service mariadb start
+# RUN service mariadb start
 
 CMD ["/mariadb_script.sh"]
 
