@@ -6,7 +6,7 @@
 #    By: lhojoon <lhojoon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/22 13:15:39 by lhojoon           #+#    #+#              #
-#    Updated: 2024/06/07 18:17:34 by lhojoon          ###   ########.fr        #
+#    Updated: 2024/06/12 14:55:12 by lhojoon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,8 +29,8 @@ RUN apt-get -y install mariadb-server
 COPY ./mariadb_script.sh .
 COPY ./50-server.cnf /etc/mysql/mariadb.conf.d/
 
-RUN bash ./mariadb_script.sh
+# RUN bash ./mariadb_script.sh
 
-CMD ["mysqld"]
+CMD ["./mariadb_script.sh"]
 
 EXPOSE 3306

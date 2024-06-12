@@ -9,7 +9,7 @@
 
 # systemctl start mariadb
 
-service mariadb start
+service mysql start
 
 # echo "CREATE USER '$MYSQL_USER'@'%' IDENTIFIED BY '$MYSQL_PASSWORD';" | mysql
 
@@ -29,3 +29,5 @@ mysql < db1.sql
 
 kill $(cat /var/run/mysqld/mysqld.pid)
 # service mysql stop
+
+mysqld
