@@ -6,7 +6,7 @@
 #    By: lhojoon <lhojoon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/22 13:15:39 by lhojoon           #+#    #+#              #
-#    Updated: 2024/06/12 14:55:58 by lhojoon          ###   ########.fr        #
+#    Updated: 2024/06/12 14:56:49 by lhojoon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,6 @@ COPY ./50-server.cnf /etc/mysql/mariadb.conf.d/
 
 # RUN bash ./mariadb_script.sh
 
-CMD ["/mariadb_script.sh"]
+CMD ["bash", "./mariadb_script.sh"]
 
 EXPOSE 3306
