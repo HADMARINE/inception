@@ -9,7 +9,6 @@
 
 # systemctl start mariadb
 
-service mariadb start
 
 # echo "CREATE USER '$MYSQL_USER'@'%' IDENTIFIED BY '$MYSQL_PASSWORD';" | mysql
 
@@ -18,6 +17,8 @@ service mariadb start
 # echo "FLUSH PRIVILEGES;" | mysql
 
 # echo "CREATE DATABASE IF NOT EXISTS $MYSQL_DATABASE;" | mysql
+
+service mariadb start
 
 echo "CREATE DATABASE IF NOT EXISTS $MYSQL_DATABASE ;" > db1.sql
 echo "CREATE USER IF NOT EXISTS '$MYSQL_USER'@'%' IDENTIFIED BY '$MYSQL_PASSWORD' ;" >> db1.sql
