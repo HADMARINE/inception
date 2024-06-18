@@ -6,7 +6,7 @@
 #    By: lhojoon <lhojoon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/08 16:42:33 by lhojoon           #+#    #+#              #
-#    Updated: 2024/06/07 17:58:25 by lhojoon          ###   ########.fr        #
+#    Updated: 2024/06/18 11:20:59 by lhojoon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,8 @@ clean:
 	docker volume rm $$(docker volume ls -q);\
 	docker network rm $$(docker network ls -q);
 fclean:
+	rm -rf /home/lhojoon/Documents/dbdata
+	rm -rf /home/lhojoon/Documents/wordpress
 	@docker compose -f $(COMPOSE_FILE) down
 	@-docker stop `docker ps -qa`
 	@-docker rm `docker ps -qa`
