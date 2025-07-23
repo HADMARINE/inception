@@ -32,4 +32,4 @@ WORKDIR /var/www/html/
 
 EXPOSE 9000
 
-CMD ["/usr/sbin/php-fpm8.4", "-F"]
+CMD ["/usr/sbin/php-fpm8.3", "-F"]

@@ -17,8 +17,8 @@ else
 	rm -rf latest.tar.gz
 
 	#Update configuration file
-	rm -rf /etc/php/8.4/fpm/pool.d/www.conf
-	mv ./www.conf /etc/php/8.4/fpm/pool.d/
+	rm -rf /etc/php/8.3/fpm/pool.d/www.conf
+	mv ./www.conf /etc/php/8.3/fpm/pool.d/
 
 	#Inport env variables in the config file
 	cd /var/www/html/wordpress
