@@ -5,10 +5,10 @@ FROM debian:bullseye
 RUN apt-get update && apt-get -y install \
     wget \
     curl \
-    php8.0 \
+    php \
     php-cgi \
     php-mysql \
-    php8.0-fpm \
+    php-fpm \
     php-pdo \
     php-gd php-cli \
     php-mbstring \
@@ -32,4 +32,4 @@ WORKDIR /var/www/html/
 
 EXPOSE 9000
 
-CMD ["/usr/sbin/php-fpm8.3", "-F"]
+CMD ["/usr/sbin/php-fpm7.4", "-F"]
