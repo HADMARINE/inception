@@ -6,12 +6,12 @@ RUN apt-get update && apt-get -y install \
     wget \
     curl \
     php8.0 \
-    php8.0-cgi \
-    php8.0-mysql \
+    php-cgi \
+    php-mysql \
     php8.0-fpm \
-    php8.0-pdo \
-    php8.0-gd php8.0-cli \
-    php8.0-mbstring \
+    php-pdo \
+    php-gd php-cli \
+    php-mbstring \
     && rm -rf /var/lib/apt/lists/*
 
 #Copy the necessary tools to download wordpress
@@ -32,4 +32,4 @@ WORKDIR /var/www/html/
 
 EXPOSE 9000
 
-CMD ["/usr/sbin/php-fpm8.0", "-F"]
+CMD ["/usr/sbin/php-fpm8.3", "-F"]
