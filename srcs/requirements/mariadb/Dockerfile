@@ -6,11 +6,11 @@
 #    By: lhojoon <lhojoon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/22 13:15:39 by lhojoon           #+#    #+#              #
-#    Updated: 2024/06/12 15:08:40 by lhojoon          ###   ########.fr        #
+#    Updated: 2025/07/23 14:46:15 by lhojoon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-FROM debian:buster
+FROM debian:bullseye
 
 # ENV MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
 # ENV MYSQL_USER=${MYSQL_USER}
