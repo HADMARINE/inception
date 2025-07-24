@@ -6,13 +6,13 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: /home/lhojoon/Documents/dbdata
+      device: /home/lhojoon/dbdata
       o: bind
   wordpress:
     driver: local
     driver_opts:
       type: none
-      device: /home/lhojoon/Documents/wordpress
+      device: /home/lhojoon/wordpress
       o: bind
 networks:
   default:
